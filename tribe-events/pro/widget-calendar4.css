@@ -1,0 +1,21 @@
+/** Change the background colour of the grid header area */
+.tribe_mini_calendar_widget thead,
+.tribe_mini_calendar_widget .tribe-mini-calendar-nav td {
+	background: lightblue;
+}
+
+/** Change the colour scheme of the days of the week */
+.tribe_mini_calendar_widget .tribe-mini-calendar-dayofweek {
+	background: yellow;
+	color: black;
+}
+
+/** Make highlighted days (those that have events) pop out a little more */
+.tribe-mini-calendar td.tribe-events-has-events {
+	background: #FAa060;
+}
+
+/** Remove the "dot icon" for populated days */
+.tribe-mini-calendar .tribe-events-has-events div[id*="daynum-"] a::before {
+	display: none;
+}/* CSS Document */

@@ -1,0 +1,65 @@
+/* Link Erfahre mehr */
+/* a.tribe-events-read-more {
+	font-size: 12px;
+	font-weight: normal;
+	padding: 0 6px;
+	float: right;
+	text-decoration: none;
+	line-height: 18px;
+	margin-top: 21px;
+	color: #FF8000;
+	clear: both;
+}
+*/
+
+
+/*Formatierung für die Link-Klasse "url"
+  Überschriften über den Veranstaltungen
+*/
+a.url:link {
+  color:#000000 !important;
+  }
+
+a.url:hover {
+  color:#81B22F !important;
+  
+/*  
+a.url:visited {
+  color:#000000 !important;
+  }
+a.url:hover {
+  color:#81B22F !important;
+  }
+
+*/
+
+
+
+A.tribe-events-read-more, A.tribe-events-venue-details, A.tribe-events-gmap:link {
+	text-decoration: none;
+	font-size: 12px;
+	color: #81B22F;
+}
+
+A.tribe-events-read-more, A.tribe-events-venue-details, A.tribe-events-gmap:visited {
+	text-decoration: none;
+	font-size: 12px;
+	color: #660000;
+}
+
+A.tribe-events-read-more, A.tribe-events-venue-details, A.tribe-events-gmap:hover {
+	text-decoration: none;
+	font-size: 12px;
+	color: #FF8000;
+	/* background-color: #2F3C4E;  */
+}
+
+A.tribe-events-read-more, A.tribe-events-venue-details, A.tribe-events-gmap:active {
+	text-decoration: none;
+	font-size: 12px;
+	color: #FF8000;
+}
+
+#tribe-bar-form .tribe-bar-submit input[type=submit] {
+padding: 10px 2px;
+}

@@ -1,0 +1,57 @@
+#######################
+NEUE CSS DATEI!! (update-sicher im Child-Theme Verzeichnis)
+
+tribe-events-pro.css
+logger-childtheme/tribe-events/pro/tribe-events-pro.css
+#######################
+
+
+#tribe-bar-form input#tribe-bar-date{
+    cursor: pointer;
+    background: #fff;
+    text-indent: 10px;
+    background-image: url(../../../../plugins/the-events-calendar/src/resources/images/events-bar/icon-month.png)!important;
+    -webkit-background-size: 15px 16px;
+    background-size: 15px 16px;
+    padding-left: 31px;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    min-height: 16px;
+    display: block;
+}
+
+@media only screen and (min-width: 767px) {
+#tribe_events_filters_form .tribe-events-filter-group.tribe-events-filter-checkboxes {
+    position: relative;
+    top: auto;
+    max-width: none; 
+    border: none; 
+    background: none; 
+    box-shadow: none; 
+}
+
+#tribe_events_filter_item_eventcategory .tribe-events-filter-group ul li label {
+   border-bottom: 0px;
+}
+
+#tribe_events_filters_form  .tribe-events-filter-group ul { 
+    max-height: none;
+  }
+
+  #tribe_events_filters_form .tribe-events-filter-group ul li{
+    float: left;
+    border-left: 0px;
+    margin: 1px;
+  }
+
+#tribe_events_filter_item_eventcategory ul li span {
+    width: 100%;
+    text-indent: 5px;
+}
+
+#tribe_events_filter_item_eventcategory .tribe-events-filter-group:before {
+display: none;
+border-bottom: #000;
+}
+}    /*end media query filter
+
