@@ -1388,3 +1388,23 @@ p a {
 /* in <p>, 04.10.2017
 /*------------------------------------------------------------------------------ */
 
+/*------------------------------------------------------------------------------ */
+/* Start: Google Maps Darstellung (korrekte Breite), 08.10.2017
+/*------------------------------------------------------------------------------ */
+
+	.single-tribe_events .tribe-events-venue-map, #top.single-tribe_events .tribe-events-meta-group-gmap {
+    background: transparent!important;
+    border: none!important;
+    padding: 0!important;
+    margin: 0!important;
+    width: 100%!important;  /* width muss auf 100% gesetzt sein */
+}
+
+.single-tribe_events .secondary .tribe-events-venue-map {
+    width: 100%!important;  /*hier ebenfalls */
+}
+
+
+/*------------------------------------------------------------------------------ */
+/* Ende: Google Maps Darstellung
+/*------------------------------------------------------------------------------ */
