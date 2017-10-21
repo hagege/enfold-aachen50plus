@@ -1306,8 +1306,8 @@ src: url('fonts/open-sans.woff2') format('woff2');
 
 
 /*------------------------------------------------------------------------------ */
-/* Start: Bilder in der Listenansicht mit Rand, 09.09.2017, Andrei
-/* ersetzt Lösung vom 14.8.2017
+/* Start: Bilder in der Listenansicht mit Rand, 14.08.2017 + 20.10.2017 
+ * (Bilder werden linksbündig angezeigt)
 /*------------------------------------------------------------------------------ */
  
  
@@ -1316,9 +1316,10 @@ src: url('fonts/open-sans.woff2') format('woff2');
 
  #tribe-events-content.tribe-events-list .tribe-events-event-image {
     float: none!important;
-    margin: 15px!important;
+    margin-right: 15px!important;
     width: initial!important;
-	width: auto!important;
+	  width: auto!important;
+	
 }
 	      
 /*------------------------------------------------------------------------------ */
