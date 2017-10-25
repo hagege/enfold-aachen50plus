@@ -456,37 +456,6 @@ color: #fff;
 
 
 
-
-/*--------------------------------------------------------------- */
-/***** Start: SHARE BUTTONS Custon Styles *****/
-/*--------------------------------------------------------------- */
-.share {
-  display: block;
-  clear: both;
-  text-align: left;
-  padding-top: 20px;
-}
-.share .sharebutton {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 11px;
-  display: inline-block;
-  margin: 0 5px;
-}
-.share .sharebutton:hover {
-  text-decoration: underline;
-}
-.share .sharebutton.facebook {color: #3b5998; }
-.share .sharebutton.twitter {color: #4099ff; }
-.share .sharebutton.googleplus {color: #d34836; }
-/*--------------------------------------------------------------- */
-/***** Ende: SHARE BUTTONS Custon Styles *****/
-/*--------------------------------------------------------------- */
-
-
-
-
-
 /*--------------------------------------------------------------- */
 /***** Start: TRIBE EVENTS LINKS ******/
 /*--------------------------------------------------------------- */
@@ -1438,3 +1407,37 @@ p a {
 /*------------------------------------------------------------------------------ */
 /* Ende: Event is Recuring
 /*------------------------------------------------------------------------------ */
+
+
+/*--------------------------------------------------------------- */
+/***** Start: SHARE BUTTONS Custom Styles *****/
+/***** Update: 24.10.2017
+/***** 
+/*--------------------------------------------------------------- */
+.share {
+  display: block;
+  clear: both;
+  text-align: left;
+  padding-top: 20px;
+  margin: 0px 15px 15px 0px;
+}
+.share .sharebutton {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+  display: inline;
+  margin: 0 2px;
+}
+.share .sharebutton:hover {
+  text-decoration: underline;
+}
+
+.share{
+	
+}
+.share .sharebutton.facebook {color: #3b5998; }
+.share .sharebutton.twitter {color: #4099ff; }
+.share .sharebutton.googleplus {color: #d34836; }
+/*--------------------------------------------------------------- */
+/***** Ende: SHARE BUTTONS Custom Styles *****/
+/*--------------------------------------------------------------- */

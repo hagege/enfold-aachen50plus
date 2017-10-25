@@ -112,6 +112,7 @@ function tribe_count_by_cat ( $event_category_slug ) {
 
 
   /* -- ADD SHARING AFTER EVERY EVENT -- */
+  /* Änderung von aachenerkinder auf aachen50plus bei den Grafiken, 25.10.2017, hgg */ 
 
   function add_tribe_event_sharing(){
     ?>
@@ -120,22 +121,23 @@ function tribe_count_by_cat ( $event_category_slug ) {
       Teilen auf:
       <?php /* FACEBOOK */ ?>
       <a target="_blank" class="sharebutton facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode(get_permalink()); ?>" title="<?php _e('Diesen Beitrag auf Facebook teilen'); ?>">
-        <img src="https://www.aachenerkinder.de/grafiken/facebook.png" alt="facebook" title="facebook" width=16px hight=16px border="0">
+        <img src="https://www.aachen50plus.de/grafiken/facebook.png" alt="facebook" title="facebook" width=16px hight=16px border="0">
       </a>
-
+      
+      <!-- wird z. Zt. nicht in aachen50plus.de genutzt: 
       <?php /* TWITTER */ ?>
       <a target="_blank" class="sharebutton twitter" href="https://twitter.com/home?status=<?php echo rawurlencode(get_the_title().' '.get_permalink()); ?>" title="<?php _e('Diesen Beitrag twittern'); ?>">
-        <img src="https://www.aachenerkinder.de/grafiken/twitter.png" alt="twitter" title="twitter" width=16px hight=16px border="0">
+        <img src="https://www.aachen50plus.de/grafiken/twitter.png" alt="twitter" title="twitter" width=16px hight=16px border="0">
       </a>
 
       <?php /* GOOGLE PLUS */ ?>
       <a target="_blank" class="sharebutton googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode(get_permalink()); ?>" title="<?php _e('Diesen Beitrag auf Google+ teilen'); ?>">
-        <img src="https://www.aachenerkinder.de/grafiken/google_plus.png" alt="Google +" title="Google +" width=16px hight=16px border="0">
+        <img src="https://www.aachen50plus.de/grafiken/google_plus.png" alt="Google +" title="Google +" width=16px hight=16px border="0">
       </a>
-      
+      -->
       <?php /* Mail */ ?>  
-      <a class="sharebutton mail" href="mailto:?subject=interessanter Link auf aachenerkinder.de&body=Hallo, hier ist ein interessanter Link auf aachenerkinder.de:<?php echo rawurlencode(get_permalink()); ?> Viele Grüße" title="<?php _e('Diesen Beitrag per Mail teilen'); ?>">
-        <img src="https://www.aachenerkinder.de/grafiken/mail.png" alt="Mail" title="Mail" width=16px hight=16px border="0"> 
+      <a class="sharebutton mail" href="mailto:?subject=interessanter Link auf aachen50plus.de&body=Hallo, hier ist ein interessanter Link auf aachen50plus.de:<?php echo rawurlencode(get_permalink()); ?> Viele Grüße" title="<?php _e('Diesen Beitrag per Mail teilen'); ?>">
+        <img src="https://www.aachen50plus.de/grafiken/mail.png" alt="Mail" title="Mail" width=16px hight=16px border="0"> 
       </a>
       
     </div>

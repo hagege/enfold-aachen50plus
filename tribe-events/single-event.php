@@ -86,6 +86,14 @@ if ( has_post_thumbnail() ) {
 			<div class="tribe-events-single-event-description tribe-events-content">
 				<?php the_content(); ?>
 			</div>
+
+      <!-- 	Erst mal in Listenansicht und in Einzelansicht:              -->		
+			<!--  Social Media Icons Facebook, Twitter... 24.10.2017, Andrei; korrigiert 25.10.2017, hgg   -->
+      <?php add_tribe_event_sharing(); ?>		
+			<!-- Social Media Icons Facebook, Twitter ... Ende -->
+			
+			<!-- .tribe-events-single-event-description -->
+			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 			
 
 			<div class="hr hr-default  avia-builder-el-1  el_after_av_heading  el_before_av_textblock "><span class="hr-inner "><span class="hr-inner-style"></span></span></div>
@@ -93,7 +101,7 @@ if ( has_post_thumbnail() ) {
 			<!-- Event meta -->
 			<?php do_action( 'tribe_events_single_event_before_the_meta' ) ?>
 			<?php tribe_get_template_part( 'modules/meta' ); ?>
-			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>
+			<?php do_action( 'tribe_events_single_event_after_the_meta' ) ?>             
 
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
