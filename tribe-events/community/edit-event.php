@@ -58,7 +58,8 @@ if ( ! isset( $tribe_event_id ) ) {
 	<?php tribe_get_template_part( 'community/modules/datepickers' ); ?>
 
   <br><br><br>
-		<p class="fett">Bei Verwendung eines Fotos oder eines Bildes bestätigen Sie durch Übermittlung der Veranstaltung, dass Sie die Rechte an dem Foto oder Bild haben.</p>
+		<strong>Bei Verwendung eines Fotos oder eines Bildes bestätigen Sie durch Übermittlung der Veranstaltung, dass Sie die Rechte an dem Foto oder Bild haben.<br> 
+      Bitte nur Bilder oder Fotos mit maximal 800 KB hochladen</strong>
 	<?php tribe_get_template_part( 'community/modules/image' ); ?>
 
 	<?php tribe_get_template_part( 'community/modules/taxonomy', null, array( 'taxonomy' => Tribe__Events__Main::TAXONOMY ) ); ?>
