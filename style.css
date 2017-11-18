@@ -1292,7 +1292,7 @@ src: url('fonts/open-sans.woff2') format('woff2');
 
 /* Schatten und abgerundete Ecken: hgg, 18.11.2017 */	      
 .tribe-events-event-image img {
-    /* border-radius: 10px!important; */
+    border-radius: 4px!important;
     -webkit-box-shadow: 10px 10px 38px -10px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 38px -10px rgba(0,0,0,0.75); 
     box-shadow: 15px 15px 38px -15px rgba(0,0,0,0.75);	
