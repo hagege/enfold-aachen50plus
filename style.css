@@ -1338,16 +1338,18 @@ h4 {
 
 /*------------------------------------------------------------------------------ */
 /* Start: Normale Verlinkung durch Unterstreichen deutlicher hervorheben
-/* in <p>, 04.10.2017, hgg
+/* in <p>, 04.10.2017, hgg  - wieder rückgängig gemacht: 18.11.2017
 /*------------------------------------------------------------------------------ */
-p a {
+/*p a {
       text-decoration: underline!important;
 }
+
 
 #tribe-events-content a
 {
       text-decoration: underline!important;
 }
+*/
 
 #top h1 a, #top h2 a, #top h3 a, #top h4 a, #top h5 a, #top h6 a .tribe-events-button {
     text-decoration: none!important;;
