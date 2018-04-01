@@ -844,11 +844,9 @@ background: #Df5022
 
 /*--------------------------------------------------------------- */
 /* Start: Mobile Ansicht schon bei 1200px aktivieren Styles */
-/* ausgeschaltet: 1.4.2018, hgg */
 /*--------------------------------------------------------------- */ 
 
 /*Navigation bei Displays mit maximal 1200px verstecken, da sie sonst nicht mehr in eine Zeile passt */
-/*
 @media only screen and (max-width: 1200px) {
         .responsive.html_mobile_menu_tablet .main_menu .avia-menu, .responsive.html_mobile_menu_tablet #header_main .social_bookmarks, .responsive.html_mobile_menu_tablet #header_main_alternate {
             display: none;
@@ -857,15 +855,13 @@ background: #Df5022
           width: 100%;
         }
 }
-*/
+
 /*Mobile Navigation fürs Displays mit maximal 1200px aktivieren */
-/*
 @media only screen and (max-width: 1200px){
         .responsive.html_mobile_menu_tablet .container #advanced_menu_toggle, .responsive.html_mobile_menu_tablet #advanced_menu_hide {
             display: block;
         }
 }
-*/
 /*--------------------------------------------------------------- */
 /* Ende: Mobile Ansicht schon bei 1200px aktivieren Styles */
 /*--------------------------------------------------------------- */ 
@@ -1311,7 +1307,6 @@ h4 {
 /*------------------------------------------------------------------------------ */
 
 /*MOBILES MENU ICON FIX 22.07.17 */
-/*
 .avia-menu.av-main-nav-wrap {
   display: block!important;
 }
@@ -1323,36 +1318,17 @@ h4 {
 .av-hamburger strong {
     display: block!important;
 }
-*/
+
 /*------------------------------------------------------------------------------ */
 /* Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
-/* geändert: 1.4.2018, hgg */
 /*------------------------------------------------------------------------------ */
-@media only screen and (max-width: 1024px) {
-  nav.main_menu {
-    display: block !important;
-  }
-  #avia-menu .menu-item {
-    display: none !important;
-  }
-  .av-burger-menu-main.menu-item-avia-special {
-    display: block !important;
-  }
-  span.logo{
-    /* Logo weiter nach rechts, damit das Menue nicht überdeckt wird. 
-    /* display: none !important; */
-    /* padding: 50px 0px 0px 0px !important; */
-     padding-left: 50px; !important;
-  }
-}
-/*
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1023px) {
 .av-burger-menu-main { 
      display: block!important; 
 }
 #top .av_mobile_menu_tablet .av-main-nav .menu-item {
      display: none!important;
-}
+}}
 /*------------------------------------------------------------------------------ */
 /* Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
 /*------------------------------------------------------------------------------ */
