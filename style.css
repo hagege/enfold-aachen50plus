@@ -6,7 +6,7 @@ Tags: magazine, news, blog, blogging, blogger, gallery, personal, portfolio, tra
 Author: Hans-Gerd Gerhards / Jens Bredigkeit
 Author URI: https://aachenerkinder.de
 Template:     enfold
-Version: 05.10.2017
+Version: 1.04.2018
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -489,7 +489,9 @@ a.tribe-events-read-more:hover {
 
 /*--------------------------------------------------------------- */
 /***** Start: Displaygrößen-abhängige Anpassungen an der Filterbar ******/
+/* deaktiviert 1.4.2018 (filterbar wird seit langem nicht mehr verwendet) */
 /*--------------------------------------------------------------- */
+/*
 @media screen and (max-width: -width: 1200px) {
         tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-date-filter,
         .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-search-filter,
@@ -551,6 +553,7 @@ a.tribe-events-read-more:hover {
         border-bottom: #000;
         }
 }
+*/
 /*--------------------------------------------------------------- */
 /***** Ende: Displaygrößen-abhängige Anpassungen an der Filterbar ******/
 /*--------------------------------------------------------------- */
@@ -561,18 +564,20 @@ a.tribe-events-read-more:hover {
 
 /*--------------------------------------------------------------- */
 /* Start TEC: filter bar */
+/* deaktiviert 1.4.2018 (filterbar wird seit langem nicht mehr verwendet) */
 /*--------------------------------------------------------------- */ 
 
 
 /* Schriftfarbe geändert (6.6.2016) */
 /* Schriftgröße geändert (von 11 auf 10) (27.7.2016) */
-
+/*
 #top #wrap_all .tribe-events-button {
   padding: 10px!important;
   color: #ffffff!important;
   font-size: 10px!important;
-  /* font-weight: bold!important ; */ 
+  /* font-weight: bold!important ; 
 }
+*/ 
 
 #tribe_events_filter_item_eventcategory {
   float: left;
@@ -876,37 +881,43 @@ background: #Df5022
 
 /*--------------------------------------------------------------- */
 /* Start: Mobile Ansicht für Retina Tablets aktivieren */
+/* ausgeschaltet: 1.4.2018 */
 /*--------------------------------------------------------------- */ 
+/*
 @media only screen 
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 2) { 
-        
+*/
+/* eingeschaltet: 1.4.2018 */  
+@media only screen and (max-width: 990px) {        
         .container #advanced_menu_toggle, .container #advanced_menu_hide {
-        display: block;
+          display: block;
         }
 
         .responsive .main_menu {
-        display: none;
+          display: none;
         }
 
         .responsive #mobile-advanced {
-        display: block;
+          display: block;
         }
 
         .container {
-        max-width: 100% !important;
+          max-width: 100% !important;
         }
+        
         #top #main .sidebar {
-        width: 100% !important;
+          width: 100% !important;
         }
-
+        
+        .content { 
+          width: 100% !important; border: none !important; 
+        }
 }
 /*--------------------------------------------------------------- */
 /* Ende: Mobile Ansicht für Retina Tablets aktivieren */
-/*--------------------------------------------------------------- */ 
-
-
+/*--------------------------------------------------------------- */
 
 
 
