@@ -592,6 +592,51 @@ display: inline-block;
 .main_color .av-tribe-events-content-wrap {
   background: #fff;
 }
+
+/*----------------------------------------------------------------*/
+/* Start: Button in Beiträgen
+/* Datum: 23.02.2018
+/* Autor: hgg
+/* z. Bsp.: weiße Farbe, bei Hover: grauer Button
+/*----------------------------------------------------------------*/
+
+/* Absatz für Button */
+.button-absatz {
+    margin:30px 0px 30px 0px;
+}
+
+.tribe-events-button-beitrag {
+    padding: 10px;
+    color: #ffffff!important;
+    font-size: 14px;
+    background-color: #e3ddcd;
+    border-radius: 4px;
+    text-decoration: none!important;
+}
+
+
+a.tribe-events-button-beitrag:focus{
+  color: #fff!important;
+  text-decoration: none;
+}
+
+a.tribe-events-button-beitrag:visited{
+  color: #fff!important;
+  text-decoration: none;
+}
+
+  
+/* Hintergrund: grau */  
+a.tribe-events-button-beitrag:hover{
+  color: #fff!important;
+  background-color: #e3ddcd;
+}
+
+/*----------------------------------------------------------------*/
+/* Ende: Button in Beiträgen
+/* Datum: 23.02.2018
+/* Autor: hgg
+/*----------------------------------------------------------------*/
   
 /* deaktiviert, 30.4.2017 (HGG) weil sonst die Überschrift in der Liste nicht farbig angezeigt wird */  
 /*
