@@ -714,7 +714,10 @@ select.ui-datepicker-month, select.ui-datepicker-year {
 
 #tribe-events .tribe-events-button {
   margin-bottom: 30px;
+  /* Weiße Schrift, 11.4.2018, hgg */  
+  color: white !important;
 }
+
 #tribe-events-bar:before,
 #tribe-events-bar:after {
   display: none;
