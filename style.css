@@ -609,7 +609,7 @@ display: inline-block;
     padding: 10px;
     color: #ffffff!important;
     font-size: 14px;
-    background-color: #e3ddcd;
+    background-color: #df5022;
     border-radius: 4px;
     text-decoration: none!important;
 }
@@ -628,7 +628,7 @@ a.tribe-events-button-beitrag:visited{
   
 /* Hintergrund: grau */  
 a.tribe-events-button-beitrag:hover{
-  color: #fff!important;
+  color: #000 !important;
   background-color: #e3ddcd;
 }
 
