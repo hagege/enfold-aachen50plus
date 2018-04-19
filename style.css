@@ -637,6 +637,7 @@ a.tribe-events-button-beitrag:hover{
 /* Datum: 23.02.2018
 /* Autor: hgg
 /*----------------------------------------------------------------*/
+ 
   
 /* deaktiviert, 30.4.2017 (HGG) weil sonst die Überschrift in der Liste nicht farbig angezeigt wird */  
 /*
@@ -1501,6 +1502,7 @@ and (max-device-width : 1100px)
 /* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
 /*------------------------------------------------------------------------------ */
 
+
 /*
 /*------------------------------------------------------------------------------ */
 /* Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
@@ -1669,4 +1671,22 @@ and (max-device-width : 1100px)
 /* deaktiviert: 14.3.2018 */	
 /* Autor: hgg
 /*----------------------------------------------------------------*/
-    
+
+/*----------------------------------------------------------------*/
+/* Start: aktuelle Mitteilungen in Beiträgen
+/* Datum: 19.4.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/
+
+.mitteilung{
+  background-color: #F9F9F9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-width:5px;  
+  border-style:dashed;
+}
+/*----------------------------------------------------------------*/
+/* Ende: aktuelle Mitteilungen in Beiträgen
+/* Datum: 19.4.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/    
