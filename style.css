@@ -1113,10 +1113,11 @@ margin-top: inherit;
 }
 
 /* Datepicker Fix */
+/* ausgeschaltet am 5.6.2018
 #top .ui-datepicker-title select{
   height: 30px;
 }
-
+*/
 
 
 #tribe-community-events table{
