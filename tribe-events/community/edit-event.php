@@ -72,12 +72,14 @@ if ( ! isset( $tribe_event_id ) ) {
 	<?php tribe_get_template_part( 'community/modules/website' ); ?>
 		<!-- Ergänzung aachen50plus.de -->
     <br>
-		<p class="fett">Der Veranstaltungsort wird veröffentlicht. <br>Alle anderen Daten werden lediglich benötigt, um ggfs. Kontakt aufzunehmen und werden natürlich nicht veröffentlicht.</p>
+		<p class="fett">Der Veranstaltungsort und der Hinweis auf das Copyright beim Foto wird veröffentlicht. <br>Alle anderen Daten werden lediglich benötigt, um ggfs. Kontakt aufzunehmen und werden natürlich nicht veröffentlicht.</p>
 		<strong>Wichtig: 
     <ol>
       <li>Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben.</li>
       <li>Wenn Sie ein Bild oder Foto hochladen, müssen Sie zwingend den Namen des Urhebers bzw. Fotografen im Feld "Copyright Foto (Name)" weiter unten eingeben. 
-      Ansonsten kann das Bild oder Foto nicht veröffentlicht werden!</li> 
+      Ansonsten kann das Bild oder Foto nicht veröffentlicht werden!<br>
+      Bei Verwendung eines Fotos oder eines Bildes bestätigen Sie durch Übermittlung der Veranstaltung, dass Sie die Rechte an dem Foto oder Bild haben.
+      </li> 
       <li>Bitte nur Bilder oder Fotos mit maximal 800 KB hochladen</li>
     </ol>
     </strong>
