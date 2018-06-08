@@ -75,10 +75,10 @@ if ( ! isset( $tribe_event_id ) ) {
 		<p class="fett">Der Veranstaltungsort wird veröffentlicht. <br>Alle anderen Daten werden lediglich benötigt, um ggfs. Kontakt aufzunehmen und werden natürlich nicht veröffentlicht.</p>
 		<strong>Wichtig: 
     <ol>
-      <li>- Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben.</li>
-      <li>- Wenn Sie ein Bild oder Foto hochladen, müssen Sie zwingend den Namen des Urhebers bzw. Fotografen im Feld "Copyright Foto (Name)" weiter unten eingeben. 
+      <li>Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben.</li>
+      <li>Wenn Sie ein Bild oder Foto hochladen, müssen Sie zwingend den Namen des Urhebers bzw. Fotografen im Feld "Copyright Foto (Name)" weiter unten eingeben. 
       Ansonsten kann das Bild oder Foto nicht veröffentlicht werden!</li> 
-      <li>- Bitte nur Bilder oder Fotos mit maximal 800 KB hochladen</li>
+      <li>Bitte nur Bilder oder Fotos mit maximal 800 KB hochladen</li>
     </ol>
     </strong>
 
