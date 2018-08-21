@@ -1383,6 +1383,15 @@ and (-webkit-min-device-pixel-ratio: 2) {
 /* geändert: 1.4.2018 - 4.4.2018, hgg */
 /* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
 /*------------------------------------------------------------------------------ */
+@media only screen and ( max-width: 770px ) {
+/* graue Farbe als Bildhintergund bei Auflösung < 770px, sonst weißer Hintergrund: hgg, 17.06.2018 */
+  .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
+    border-color: #e3ddcd; 
+    background-color: #e3ddcd;  
+  }
+}
+
+
 @media only screen and ( max-width: 989px ) {
 
   .container #advanced_menu_toggle, .container #advanced_menu_hide {
