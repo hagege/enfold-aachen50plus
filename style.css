@@ -113,6 +113,21 @@ h3.slide-entry-title {
     height: 50px; */
 }
 
+/*----------------------------------------------------------------*/
+/* Start: Hintergrundfarbe für Details nach Umstellung auf neueste Version single_event.php auf weiß
+/* Datum: 30.9.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/
+.single-tribe_events .tribe-events-event-meta {
+    background-color: #ffffff!important;
+}
+/*----------------------------------------------------------------*/
+/* Ende: Hintergrundfarbe für Details nach Umstellung auf neueste Version single_event.php auf weiß
+/* Datum: 30.9.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/
+
+
 /* so klappt es: */
 .avia-slideshow li img {
     margin-top: -50px;
@@ -1004,7 +1019,7 @@ background: #Df5022
 
 .tribe-events-category-xxl .av-tribe-events-content-wrap, .tribe-events-category-premium .av-tribe-events-content-wrap{
 
-  background: #e3ddcd; /* #e3ddcd; */ 
+  background: #e1e1e1; /* #e3ddcd; */ 
 }
 
 
@@ -1013,12 +1028,12 @@ background: #Df5022
 }
 
 .tribe-events-category-premium .tribe-events-list-event-title,.tribe-events-category-xxl .tribe-events-list-event-title,.events-category-xxl .tribe-events-map-event-title,.tribe-events-category-premium .tribe-events-map-event-title {
-    background-color: #e3ddcd; /*#e3ddcd; #ffde00; */
+    background-color: #e1e1e1; /*#e3ddcd; #ffde00; */
     display: block!important;
 }
 
 .tribe-mobile .tribe-events-category-premium .tribe-events-list-event-title, .tribe-mobile .tribe-events-category-xxl .tribe-events-list-event-title, .tribe-mobile  .events-category-xxl .tribe-events-map-event-title {
-    background-color: #e3ddcd; 
+    background-color: #e1e1e1; 
     display: inline-block!important;
 }
 
@@ -1386,8 +1401,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
 @media only screen and ( max-width: 770px ) {
 /* graue Farbe als Bildhintergund bei Auflösung < 770px, sonst weißer Hintergrund: hgg, 17.06.2018 */
   .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
-    border-color: #e3ddcd; 
-    background-color: #e3ddcd;  
+    border-color: #e1e1e1!important; 
+    background-color: #ffffff!important; 
+    /* geändert 4.10.2108 statt: #e3ddcd; */  
+  }
+  .tribe-is-responsive.tribe-mobile .tribe-events-page-title {
+    margin-bottom: 2.5em!important;
   }
 }
 
