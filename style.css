@@ -591,7 +591,7 @@ a.tribe-events-read-more:hover {
 /* Breite des Buttons geändert (von 25% auf 40%) */
 /* hgg, 9.2.2019 */
 .tribe-bar-submit {
-    width: 40%;
+    width: 40% !important;
 }
 
 
