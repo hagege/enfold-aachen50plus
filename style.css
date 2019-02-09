@@ -582,10 +582,18 @@ a.tribe-events-read-more:hover {
 
 
 /* Schriftgröße und Ränder geändert (9.2.2019) */
-#top #wrap_all .tribe-events-button {
+/*#top #wrap_all .tribe-events-button {
     padding: 0px !important;
     font-size: 9px !important;
 }
+*/
+
+/* Breite des Buttons geändert (von 25% auf 40%) */
+/* hgg, 9.2.2019 */
+.tribe-bar-submit {
+    width: 40%;
+}
+
 
 #tribe_events_filter_item_eventcategory {
   float: left;
