@@ -436,6 +436,24 @@ color: #fff;
 #top input[type="checkbox"] {
     display: inline-block;
 }
+
+
+/* Scrollbar entfernen */
+.wpgmza_marker_holder {
+    overflow: hidden;
+}
+
+/* Tabelle nicht über die gesamte Breite, weil sonst */
+/* die Schrift am linken Rand der Tabelle "klebt"    */
+table.dataTable.no-footer {
+    width: 95% !important;
+}
+
+/* Suche und Anzahl mit Rand */
+.dataTables_wrapper .dataTables_length, body .dataTables_wrapper .dataTables_filter {
+    margin: 15px !important;
+}
+
 /*--------------------------------------------------------------- */
 /* Ende: Anpassungen Freizeitangebote WP GOOGLE MAPS */
 /*--------------------------------------------------------------- */

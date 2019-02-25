@@ -272,7 +272,7 @@ function tribe_alter_event_archive_titles ( $original_recipe_title, $depth ) {
       $first_event_date = tribe_get_start_date( $wp_query->posts[0], false );
     } else {
       //otherwise show the start date of the first event in the results
-      $first_event_date = tribe_event_format_date( $_REQUEST['tribe-bar-date'], false );
+      $first_event_date = tribe_format_date( $_REQUEST['tribe-bar-date'], false );
     }
     $last_event_date = tribe_get_end_date( $wp_query->posts[ count( $wp_query->posts ) - 1 ], false );
     $title = sprintf( $title_range, $first_event_date, $last_event_date );
@@ -329,3 +329,36 @@ add_filter('the_generator', 'wpb_remove_version');
 /* Speichern von Veranstaltungen gibt, 5.9.2017              */
 /* --------------------------------------------------------- */
 add_filter( 'do_run_rocket_bot', '__return_false');
+
+/*----------------------------------------------------------------*/
+/* Start: Ausschließen recaptcha bei lazyload WP Rocket, siehe Antwort von Lucy 
+/* Datum: 29.12.2017
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+function rocket_lazyload_exclude_src( $src ) {
+$src[] = '?cp_contactformtoemail_captcha=captcha';
+
+return $src;
+}
+add_filter( 'rocket_lazyload_excluded_src', 'rocket_lazyload_exclude_src' );
+/*----------------------------------------------------------------*/
+/* Ende: Ausschließen recaptcha bei lazyload WP Rocket 
+/* Datum: 29.12.2017
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------*/
+/* Start: Balken links in der Überschrift der Events fehlte 
+/* Datum: 12.10.2018
+/* Autor: hgg
+/* https://wordpress.org/support/topic/category-colors-not-showing-after-update-to-5-2-2/page/2/#post-10757393
+/*----------------------------------------------------------------*/
+add_filter( 'teccc_fix_category_background_color', function( $null, $category ) {
+	return "#top .main_color {$category} .tribe-events-list-event-title,";
+}, 10, 2 );
+/*----------------------------------------------------------------*/
+/* Ende: Balken links in der Überschrift der Events fehlte 
+/* Datum: 12.10.2018
+/* Autor: hgg
+/* https://wordpress.org/support/topic/category-colors-not-showing-after-update-to-5-2-2/page/2/#post-10757393
+/*----------------------------------------------------------------*/

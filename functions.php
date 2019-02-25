@@ -12,16 +12,16 @@
 
 
 	// Add Meta Referrer Tag in Header without Plugin
-  // Mit diesem Eintrag im Header des themes sollen die Zugriffe auf http - Seiten 
+  // Mit diesem Eintrag im Header des themes sollen die Zugriffe auf http - Seiten
   // nicht mehr als direkte Zugriffe gezählt werden, sondern aachenerkinder zugezählt werden (wie es auch sein soll)
   // 18.9.2016
-	  
+
 	function add_meta_tags() {
 	?>
 		<meta name="referrer" content="always"/>
 	<?php }
 	add_action('wp_head', 'add_meta_tags');
-	  
+
 	//Add Meta Referrer Tag in Header without Plugin
 
 
@@ -83,7 +83,7 @@
   }
   add_action( 'pre_get_posts', 'exclude_category' );
 */
-  
+
   /* -- Google Fonts deaktivieren -- */
 add_action( 'init', 'enfold_customization_switch_fonts' );
 function enfold_customization_switch_fonts() {
@@ -95,24 +95,24 @@ function enfold_customization_switch_fonts() {
 
 /* https://theeventscalendar.com/support/forums/topic/counting-posts/ */
 function tribe_count_by_cat ( $event_category_slug ) {
- 
+
     if ( ! class_exists('Tribe__Events__Main') ) return false;
- 
-     
+
+
     $tax_query = array(    'taxonomy'    => Tribe__Events__Main::TAXONOMY,
                         'field'        => 'slug',
                         'terms'        => $event_category_slug );
- 
+
       $args = array( 'post_type' => Tribe__Events__Main::POSTTYPE, 'post_status' => 'publish', 'tax_query' => array( $tax_query ), 'posts_per_page' => -1);
- 
+
     $query = new WP_Query( $args );
- 
+
     return $query->found_posts;
 }
 
 
   /* -- ADD SHARING AFTER EVERY EVENT -- */
-  /* Änderung von aachenerkinder auf aachen50plus bei den Grafiken, 25.10.2017, hgg */ 
+  /* Änderung von aachenerkinder auf aachen50plus bei den Grafiken, 25.10.2017, hgg */
 
   function add_tribe_event_sharing(){
     ?>
@@ -123,8 +123,8 @@ function tribe_count_by_cat ( $event_category_slug ) {
       <a target="_blank" class="sharebutton facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode(get_permalink()); ?>" title="<?php _e('Diesen Beitrag auf Facebook teilen'); ?>">
         <img src="https://www.aachen50plus.de/grafiken/facebook.png" alt="facebook" title="facebook" width=16px hight=16px border="0">
       </a>
-      
-      <!-- wird z. Zt. nicht in aachen50plus.de genutzt: 
+
+      <!-- wird z. Zt. nicht in aachen50plus.de genutzt:
       <?php /* TWITTER */ ?>
       <a target="_blank" class="sharebutton twitter" href="https://twitter.com/home?status=<?php echo rawurlencode(get_the_title().' '.get_permalink()); ?>" title="<?php _e('Diesen Beitrag twittern'); ?>">
         <img src="https://www.aachen50plus.de/grafiken/twitter.png" alt="twitter" title="twitter" width=16px hight=16px border="0">
@@ -135,11 +135,11 @@ function tribe_count_by_cat ( $event_category_slug ) {
         <img src="https://www.aachen50plus.de/grafiken/google_plus.png" alt="Google +" title="Google +" width=16px hight=16px border="0">
       </a>
       -->
-      <?php /* Mail */ ?>  
+      <?php /* Mail */ ?>
       <a class="sharebutton mail" href="mailto:?subject=interessanter Link auf aachen50plus.de&body=Hallo, hier ist ein interessanter Link auf aachen50plus.de:<?php echo rawurlencode(get_permalink()); ?> Viele Grüße" title="<?php _e('Diesen Beitrag per Mail teilen'); ?>">
-        <img src="https://www.aachen50plus.de/grafiken/mail.png" alt="Mail" title="Mail" width=16px hight=16px border="0"> 
+        <img src="https://www.aachen50plus.de/grafiken/mail.png" alt="Mail" title="Mail" width=16px hight=16px border="0">
       </a>
-      
+
     </div>
 
     <?php
@@ -149,20 +149,20 @@ function tribe_count_by_cat ( $event_category_slug ) {
 
 /* Dies wurde bis TEC 4.2.4 so eingesetzt, Änderung ab 31.8.2016
 	add_action('tribe_events_template', 'avia_events_tempalte_paths', 10, 2);
-	
+
 	function avia_events_tempalte_paths($file, $template)
 	{
 		$redirect = array('default-template.php' , 'single-event.php' , 'pro/map.php' );
-		
+
 		if(in_array($template, $redirect))
 		{
 			$file = AVIA_EVENT_PATH . "views/".$template;
 		}
-		
+
 		return $file;
 	}
 
-*/ 
+*/
 
 /* Das wird ab TEC 4.2.5 ausgeführt: */
 
@@ -186,12 +186,12 @@ function avia_events_template_paths_mod($file, $template)
 if(!function_exists('avia_events_register_assets'))
 {
 	if(!is_admin()){ add_action('wp_enqueue_scripts', 'avia_events_register_assets',15); }
-	
+
 	function avia_events_register_assets($styleUrl)
 	{
 		wp_enqueue_style( 'avia-events-cal', AVIA_BASE_URL.'config-events-calendar/event-mod.css');
 	}
-} 
+}
 
 // DatumsCheck() hat datum_bereich() wegen der besseren Handhabung abgelöst
 // wichtig für die Werbung
@@ -212,14 +212,14 @@ function DatumsCheck($Datum, $ZeitspanneBeginn, $ZeitspanneEnde) {
 
 
 add_filter('widget_display_callback', 'increase_event_widget_limit', 10, 2);
- 
+
 /**
  * Test if the current widget is an Advanced List Widget and fix the event limit if it is.
  */
 function increase_event_widget_limit(array $instance, $widget) {
     if (is_a($widget, 'Tribe__Events__Pro__Advanced_List_Widget'))
         $instance['limit'] = 30;
- 
+
     return $instance;
 }
 add_filter('avf_title_args', 'fix_blog_page_title', 10, 2);
@@ -331,7 +331,7 @@ add_filter('the_generator', 'wpb_remove_version');
 add_filter( 'do_run_rocket_bot', '__return_false');
 
 /*----------------------------------------------------------------*/
-/* Start: Ausschließen recaptcha bei lazyload WP Rocket, siehe Antwort von Lucy 
+/* Start: Ausschließen recaptcha bei lazyload WP Rocket, siehe Antwort von Lucy
 /* Datum: 29.12.2017
 /* Autor: hgg
 /*----------------------------------------------------------------*/
@@ -342,13 +342,13 @@ return $src;
 }
 add_filter( 'rocket_lazyload_excluded_src', 'rocket_lazyload_exclude_src' );
 /*----------------------------------------------------------------*/
-/* Ende: Ausschließen recaptcha bei lazyload WP Rocket 
+/* Ende: Ausschließen recaptcha bei lazyload WP Rocket
 /* Datum: 29.12.2017
 /* Autor: hgg
 /*----------------------------------------------------------------*/
 
 /*----------------------------------------------------------------*/
-/* Start: Balken links in der Überschrift der Events fehlte 
+/* Start: Balken links in der Überschrift der Events fehlte
 /* Datum: 12.10.2018
 /* Autor: hgg
 /* https://wordpress.org/support/topic/category-colors-not-showing-after-update-to-5-2-2/page/2/#post-10757393
@@ -357,8 +357,63 @@ add_filter( 'teccc_fix_category_background_color', function( $null, $category ) 
 	return "#top .main_color {$category} .tribe-events-list-event-title,";
 }, 10, 2 );
 /*----------------------------------------------------------------*/
-/* Ende: Balken links in der Überschrift der Events fehlte 
+/* Ende: Balken links in der Überschrift der Events fehlte
 /* Datum: 12.10.2018
 /* Autor: hgg
 /* https://wordpress.org/support/topic/category-colors-not-showing-after-update-to-5-2-2/page/2/#post-10757393
+/*----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------*/
+/* Start: shortcodes für Anzahl Veranstaltungen und Beiträge
+/* Datum: 18.12.2018
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+
+// Display the total number of published posts using the shortcode [published-posts-count]
+function customprefix_total_number_published_posts($atts) {
+    return wp_count_posts('post')->publish;
+}
+add_shortcode('published-posts-count', 'customprefix_total_number_published_posts');
+
+
+// Display the total number of published events using the shortcode [published-events-count]
+function customprefix_total_number_published_events($atts) {
+    return wp_count_posts('tribe_events')->publish;
+}
+add_shortcode('published-events-count', 'customprefix_total_number_published_events');
+
+
+
+// Zeigt bei einer Veranstaltung oder einem Beitrag automatisch den Text aus "Beschriftung" in kursiv
+// Aufruf-Beispiele:
+// [fuss link="https://aachen50plus.de" vl="ja"] --> zeigt immer Bildnachweis, dann Mehr Infos mit dem Link und bei vl="ja" den Link zu "Weitere Veranstaltungen"
+// [fuss vl="ja"] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und bei vl="ja" den Link zu "Weitere Veranstaltungen"
+// vl = Veranstaltungsliste
+// [fuss] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und keinen Link zu "Weitere Veranstaltungen"
+// hgg, 23.2.2019
+function beitrags_fuss($atts) {
+  	$werte = shortcode_atts( array(
+  	  'link' => 'keine Webseite',
+      'vl' => 'nein',
+  	  ), $atts);
+    $ausgabe = '<br><strong>keine Webseite angegeben</strong>';
+
+    if ( $werte['link'] != 'keine Webseite' and trim($werte['link']) != '') {
+      $ausgabe = '<br><a href=' . $werte['link'] . ' target="_blank">Mehr Infos</a>';
+    }
+    $ausgabe = $ausgabe . '<br><br><em>' . get_post(get_post_thumbnail_id())->post_excerpt . '</em>';
+    if ( $werte['vl'] != 'nein' ) {
+      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/terminanzeige/">Weitere Veranstaltungen</a></p>';
+    }
+    $ausgabe = $ausgabe . '<hr>';
+	return $ausgabe;
+}
+add_shortcode('fuss', 'beitrags_fuss');
+
+
+
+/*----------------------------------------------------------------*/
+/* Ende: shortcodes für Anzahl Veranstaltungen und Beiträge
+/* Datum: 18.12.2018
+/* Autor: hgg
 /*----------------------------------------------------------------*/
