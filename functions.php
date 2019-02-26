@@ -386,7 +386,7 @@ add_shortcode('published-events-count', 'customprefix_total_number_published_eve
 
 // Zeigt bei einer Veranstaltung oder einem Beitrag automatisch den Text aus "Beschriftung" in kursiv
 // Aufruf-Beispiele:
-// [fuss link="https://aachen50plus.de" vl="ja"] --> zeigt immer Bildnachweis, dann Mehr Infos mit dem Link und bei vl="ja" den Link zu "Weitere Veranstaltungen"
+// [fuss link="https://aachen50plus.de" vl="ja" fm="ja"] --> zeigt immer Bildnachweis, dann Mehr Infos mit dem Link und bei vl="ja" den Link zu "Weitere Veranstaltungen" und bei fm="ja" den Link zu "Weitere Flohmärkte"
 // [fuss vl="ja"] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und bei vl="ja" den Link zu "Weitere Veranstaltungen"
 // vl = Veranstaltungsliste
 // [fuss] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und keinen Link zu "Weitere Veranstaltungen"
@@ -395,6 +395,7 @@ function beitrags_fuss($atts) {
   	$werte = shortcode_atts( array(
   	  'link' => 'keine Webseite',
       'vl' => 'nein',
+      'fm' => 'nein',
   	  ), $atts);
     $ausgabe = '<br><strong>keine Webseite angegeben</strong>';
 
@@ -404,6 +405,9 @@ function beitrags_fuss($atts) {
     $ausgabe = $ausgabe . '<br><br><em>' . get_post(get_post_thumbnail_id())->post_excerpt . '</em>';
     if ( $werte['vl'] != 'nein' ) {
       $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/terminanzeige/">Weitere Veranstaltungen</a></p>';
+    }
+    if ( $werte['fm'] != 'nein' ) {
+      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/flohmarkt/">Weitere Flohmärkte</a></p>';
     }
     $ausgabe = $ausgabe . '<hr>';
 	return $ausgabe;
