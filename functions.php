@@ -394,8 +394,8 @@ add_shortcode('published-events-count', 'customprefix_total_number_published_eve
 function beitrags_fuss($atts) {
   	$werte = shortcode_atts( array(
   	  'link' => 'keine Webseite',
-      'vl' => 'nein',
       'fm' => 'nein',
+      'vl' => 'nein',
   	  ), $atts);
     $ausgabe = '<br><strong>keine Webseite angegeben</strong>';
 
@@ -403,11 +403,11 @@ function beitrags_fuss($atts) {
       $ausgabe = '<br><a href=' . $werte['link'] . ' target="_blank">Mehr Infos</a>';
     }
     $ausgabe = $ausgabe . '<br><br><em>' . get_post(get_post_thumbnail_id())->post_excerpt . '</em>';
-    if ( $werte['vl'] != 'nein' ) {
-      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/terminanzeige/">Weitere Veranstaltungen</a></p>';
-    }
     if ( $werte['fm'] != 'nein' ) {
       $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/flohmarkt/">Weitere Flohmärkte</a></p>';
+    }
+    if ( $werte['vl'] != 'nein' ) {
+      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/terminanzeige/">Weitere Veranstaltungen</a></p>';
     }
     $ausgabe = $ausgabe . '<hr>';
 	return $ausgabe;
