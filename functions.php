@@ -386,7 +386,7 @@ add_shortcode('published-events-count', 'customprefix_total_number_published_eve
 
 // Zeigt bei einer Veranstaltung oder einem Beitrag automatisch den Text aus "Beschriftung" in kursiv
 // Aufruf-Beispiele:
-// [fuss link="https://aachen50plus.de" vl="ja" fm="ja"] --> zeigt immer Bildnachweis, dann Mehr Infos mit dem Link und bei vl="ja" den Link zu "Weitere Veranstaltungen" und bei fm="ja" den Link zu "Weitere Flohmärkte"
+// [fuss link="https://aachen50plus.de" fm="ja" vl="ja"] --> zeigt immer Bildnachweis, dann Mehr Infos mit dem Link und bei fm="ja" den Link zu "Weitere Flohmärkte" und bei vl="ja" den Link zu "Weitere Veranstaltungen"
 // [fuss vl="ja"] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und bei vl="ja" den Link zu "Weitere Veranstaltungen"
 // vl = Veranstaltungsliste
 // [fuss] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und keinen Link zu "Weitere Veranstaltungen"
