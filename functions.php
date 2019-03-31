@@ -391,6 +391,9 @@ add_shortcode('published-events-count', 'customprefix_total_number_published_eve
 // vl = Veranstaltungsliste
 // [fuss] --> zeigt immer Bildnachweis, dann "keine Webseite angegeben" und keinen Link zu "Weitere Veranstaltungen"
 // hgg, 23.2.2019
+// erweitert: hgg, 29.3.2019: zusätzlich kann bei vl die Kategorie angeben werden, so dass bei Klick auf den Link sofort die Veranstaltungen der jeweiligen Kategorie angezeigt werden, z. B.
+// [fuss link="http://www.melan.de/go/standort-detail/1-flohmarkt-troedelmarkt-in-aachen-altstadt.html" kfm="ja" vl="Feiern und Feste"]
+
 function beitrags_fuss($atts) {
   	$werte = shortcode_atts( array(
   	  'link' => 'keine Webseite',
@@ -398,6 +401,7 @@ function beitrags_fuss($atts) {
       'vl' => 'nein',
   	  ), $atts);
     $ausgabe = '<br><strong>keine Webseite angegeben</strong>';
+    $veranstaltungen = 'https://aachen50plus.de/veranstaltungen/kategorie/';
 
     if ( $werte['link'] != 'keine Webseite' and trim($werte['link']) != '') {
       $ausgabe = '<br><a href=' . $werte['link'] . ' target="_blank">Mehr Infos</a>';
@@ -407,7 +411,11 @@ function beitrags_fuss($atts) {
       $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/flohmarkt/">Weitere Flohmärkte</a></p>';
     }
     if ( $werte['vl'] != 'nein' ) {
-      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/terminanzeige/">Weitere Veranstaltungen</a></p>';
+      if ( trim($werte['vl']) != '' ) {
+        /* Leerzeichen werden ggfs. durch - ersetzt (Sicherheitsmaßnahme bei Eingabe von Kategorien, die Leerzeichen enthalten, z. B. "Feiern und Feste") */
+        $veranstaltungen = $veranstaltungen . str_replace(" ", "-", $werte['vl']);
+      }
+      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href=' . $veranstaltungen . ' target="_blank">Weitere Veranstaltungen</a></p>';
     }
     $ausgabe = $ausgabe . '<hr>';
 	return $ausgabe;
