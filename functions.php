@@ -411,7 +411,7 @@ function beitrags_fuss($atts) {
       $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href="https://aachen50plus.de/veranstaltungen/kategorie/flohmarkt/">Weitere Flohmärkte</a></p>';
     }
     if ( $werte['vl'] != 'nein' ) {
-      if ( trim($werte['vl']) != '' ) {
+      if ( trim($werte['vl']) != '' AND trim($werte['vl']) != 'ja') {
         /* Leerzeichen werden ggfs. durch - ersetzt (Sicherheitsmaßnahme bei Eingabe von Kategorien, die Leerzeichen enthalten, z. B. "Feiern und Feste") */
         $veranstaltungen = $veranstaltungen . str_replace(" ", "-", $werte['vl']);
       }
