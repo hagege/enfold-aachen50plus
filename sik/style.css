@@ -436,6 +436,24 @@ color: #fff;
 #top input[type="checkbox"] {
     display: inline-block;
 }
+
+
+/* Scrollbar entfernen */
+.wpgmza_marker_holder {
+    overflow: hidden;
+}
+
+/* Tabelle nicht über die gesamte Breite, weil sonst */
+/* die Schrift am linken Rand der Tabelle "klebt"    */
+table.dataTable.no-footer {
+    width: 95% !important;
+}
+
+/* Suche und Anzahl mit Rand */
+.dataTables_wrapper .dataTables_length, body .dataTables_wrapper .dataTables_filter {
+    margin: 15px !important;
+}
+
 /*--------------------------------------------------------------- */
 /* Ende: Anpassungen Freizeitangebote WP GOOGLE MAPS */
 /*--------------------------------------------------------------- */
@@ -591,6 +609,7 @@ a.tribe-events-read-more:hover {
 /* Breite des Buttons geändert (von 25% auf 40%) */
 /* hgg, 9.2.2019 */
 .tribe-bar-submit {
+    padding: 0px !important;
     width: 40% !important;
 }
 
