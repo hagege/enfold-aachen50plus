@@ -428,7 +428,8 @@ function beitrags_fuss($atts) {
           $vergleichswert = '';
           }
       }
-      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href=' . $veranstaltungen . ' target="_blank">Weitere Veranstaltungen</a></p>';
+      $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href=' . $veranstaltungen . ' target="_blank">Weitere Veranstaltungen' . $vergleichswert . '</a></p>';
+      // $ausgabe = $ausgabe . '<br><br><p class="button-absatz"><a class="tribe-events-button-beitrag" href=' . $veranstaltungen . ' target="_blank">Weitere Veranstaltungen</a></p>';
     }
     if ( trim($werte['il']) != '') {
        $ausgabe = $ausgabe . '<p class="button-absatz"><a class="tribe-events-button-beitrag" href=' . $werte['il'] . ' target="_blank">Mehr Infos auf dieser Seite</a></p><hr>';
