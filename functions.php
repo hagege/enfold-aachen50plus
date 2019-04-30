@@ -419,7 +419,9 @@ function beitrags_fuss($atts) {
         /* wenn der Vergleichswert im Array der Kategorien enthalten ist: */
         if (in_array($vergleichswert, $kategorien )){
           /* Sonderzeichen ersetzen */
-          $werte['vl'] = sonderzeichen ($werte['vl']);
+          $werte['vl'] = sonderzeichen($werte['vl']);
+          /* Großbuchstaben durch Kleinbuchstaben ersetzen: */
+          $werte['vl'] = strtolower($werte['vl']);
           $veranstaltungen = $veranstaltungen . str_replace(" ", "-", $werte['vl']);
           $vergleichswert = ': ' . $vergleichswert . '';
           }
