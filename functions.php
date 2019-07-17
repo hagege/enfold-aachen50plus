@@ -382,6 +382,18 @@ function customprefix_total_number_published_events($atts) {
 }
 add_shortcode('published-events-count', 'customprefix_total_number_published_events');
 
+/* Die XMLRPC-Schnittstelle komplett abschalten  
+/* hgg, 27.6.2019 */
+add_filter( 'xmlrpc_enabled', '__return_false' );
+/* Den HTTP-Header vom XMLRPC-Eintrag bereinigen */
+add_filter( 'wp_headers', 'AH_remove_x_pingback' );
+ function AH_remove_x_pingback( $headers )
+ {
+ unset( $headers['X-Pingback'] );
+ return $headers;
+ }
+ 
+
 
 // 1.5.2019: Ersetzt durch plugin "add infos to the events calendar"
 // Zeigt bei einer Veranstaltung oder einem Beitrag automatisch den Text aus "Beschriftung" in kursiv
