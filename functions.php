@@ -1,10 +1,18 @@
 <?php
 
+function child_theme_styles() {
+  wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+// die folgende Zeile ist wohl nicht notwendig:
+//wp_enqueue_style( 'child-theme-css', get_stylesheet_directory_uri() .'/style.css' , array('parent-style'));
+
+}
+add_action( 'wp_enqueue_scripts', 'child_theme_styles' );
+
 
 /* Problem mit Enfold: */
 
 
-
+ 
 
 
   /* -- LOAD TEXT DOMAINS FOR CHILDTHEME -- */
@@ -147,6 +155,8 @@ function tribe_count_by_cat ( $event_category_slug ) {
   add_action('tribe_events_after_the_content','add_tribe_event_sharing');
 
 
+  add_theme_support( 'deactivate_tribe_events_calendar' );
+
 /* Dies wurde bis TEC 4.2.4 so eingesetzt, Änderung ab 31.8.2016
 	add_action('tribe_events_template', 'avia_events_tempalte_paths', 10, 2);
 
@@ -164,7 +174,7 @@ function tribe_count_by_cat ( $event_category_slug ) {
 
 */
 
-/* Das wird ab TEC 4.2.5 ausgeführt: */
+/* Das wird ab TEC 4.2.5 ausgeführt: 
 
 add_action('after_setup_theme', function() {
 	if(is_child_theme()) remove_action('tribe_events_template', 'avia_events_tempalte_paths', 10, 2);
@@ -192,6 +202,8 @@ if(!function_exists('avia_events_register_assets'))
 		wp_enqueue_style( 'avia-events-cal', AVIA_BASE_URL.'config-events-calendar/event-mod.css');
 	}
 }
+
+*/
 
 // DatumsCheck() hat datum_bereich() wegen der besseren Handhabung abgelöst
 // wichtig für die Werbung
@@ -320,7 +332,8 @@ return '';
 add_filter('the_generator', 'wpb_remove_version');
 
   require_once 'library/inc.kundenfunktionen.php';
-  require_once 'library/inc.overwrite_plugin.php';
+  // hgg, 12.2.2020: nicht mehr benötigt, weil die Standardfunktionalität genutzt wird
+  //  require_once 'library/inc.overwrite_plugin.php';
   require_once 'library/inc.disable_tribe_js.php';
 
 
@@ -392,7 +405,35 @@ add_filter( 'wp_headers', 'AH_remove_x_pingback' );
  unset( $headers['X-Pingback'] );
  return $headers;
  }
- 
+
+
+/*----------------------------------------------------------------*/
+/* Start: Hinweistext vor dem Content
+/* Datum: 22.03.2020
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+
+add_filter( 'the_content', 'filter_the_content_in_the_main_loop' );
+
+function filter_the_content_in_the_main_loop( $content ) {
+
+    // Prüfen ob wir in dem Loop eines Beitrags oder einer Seite sind
+    if (( is_single() OR is_page()) && in_the_loop() && is_main_query() ) {
+        // Den HTML Teil für die Schrift könnt ihr beliebig ändern oder erweitern
+        // $ackids_button = '<div class="ackids_container"><div class="mitglied"><a class="button-mitglied" href="https://steadyhq.com/de/aachenerkinder" target="_blank" rel="noopener noreferrer">Werde Mitglied</a></div><div class="mitglied_beschreibung">Werde als Besucher oder Veranstalter Mitglied bei aachenerkinder.de und unterstütze unsere Arbeit.</div></div>';
+        // spezielle Anzeige wegen abgesagter Events, hgg, 19.3.2020
+        $abgesagte_events ='<div class="ackids_container"><div class="abgesagt">Bitte beachten: Aufgrund der aktuellen Problematik (Corona) kann man davon ausgehen, dass so gut wie keine Veranstaltungen stattfinden. Bleiben Sie gesund!</div></div>';
+        // return $ackids_button . $content . $ackids_button;
+        return $abgesagte_events . $content;
+    }
+
+    return $content;
+}
+/*----------------------------------------------------------------*/
+/* Ende: Hinweistext vor dem Content
+/* Datum: 22.03.2020
+/* Autor: hgg
+/*----------------------------------------------------------------*/
 
 
 // 1.5.2019: Ersetzt durch plugin "add infos to the events calendar"

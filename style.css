@@ -6,58 +6,24 @@ Tags: magazine, news, blog, blogging, blogger, gallery, personal, portfolio, tra
 Author: Hans-Gerd Gerhards / Jens Bredigkeit
 Author URI: https://aachenerkinder.de
 Template:     enfold
-Version: 1.04.2018
+Version: 02.2020
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-@import url('../enfold/style.css');
+/* jetzt eingebunden in der functions.php (besser): */
+/* @import url('../enfold/style.css'); */
 
 
-/* Änderungen für das Layout in blogs: */
-/* Keine Kategorien anzeigen */
-/*
-.html_elegant-blog #top .avia-content-slider .blog-categories {
-    top: 0px;
-}
 
-.html_elegant-blog #top .post-entry .blog-categories {
-     position: absolute;
-     z-index: -2;
-}
-
-element.style {
-    left: -5px;
-    top: 0px;
-    overflow: hidden;
-    display: block;
-    height: 158px;
-    width: 331px;
-}
-
-/* Überschrift linksbündig
-h3.slide-entry-title {
-  text-align: left !important;
-}
-
-*/
 /*--------------------------------------------------------------- */
 /* Start: Änderungen von HG beim Blog */
 /*--------------------------------------------------------------- */
 
-/* Keine Kategorien anzeigen
-.html_elegant-blog #top .post-entry .blog-categories {
-     position: absolute;
-     z-index: -2;
-}
-*/
 
 /* Keine Kategorien anzeigen */
 .html_elegant-blog #top .post-entry .blog-categories{
     display: none;                /* Zeile löschen, falls wieder gewünscht */
     /* visibility: hidden;        Zeile löschen, falls wieder gewünscht */
-    text-align: left;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
 }
 
 /* Überschrift linksbündig und ohne Umwandlung in Großschrift auf Blogseiten */
@@ -104,13 +70,6 @@ h3.slide-entry-title {
     z-index: 1;
     width: 50%;
     height: 50%;
-    /*
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50px; */
 }
 
 /*----------------------------------------------------------------*/
@@ -142,27 +101,6 @@ h3.slide-entry-title {
     background-size: cover;
     background-repeat: no-repeat;
     height: 430px;
-  /*
-  margin-bottom: 30px;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  clip-path: circle(15px at 20px 20px);
-  clip:rect(50px 550px 200px 100px);
-  height: 400px;
-  /*
-    display: block;
-  height: 150px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 3px;
-  position: absolute;
-    clip:rect(50px 550px 200px 100px) */
 }
 /*--------------------------------------------------------------- */
 /* Ende: Änderungen von HG beim Blog */
@@ -290,29 +228,36 @@ h2.tribe-events-list-event-title{
   }
 
 /*Auf großen Displays 4 Kategoriefilter nebeneinander darstellen */
-@media (min-width: 1700px) {
+@media (min-width: 2000px) {
   .category_filter {
     width: 25%;
   }
 }
 
 /*Auf mittelgroßen Displays 3 Kategoriefilter nebeneinander darstellen */
-@media (min-width: 1400px) and (max-width: 1700px) {
+@media (min-width: 1400px) and (max-width: 2000px) {
   .category_filter {
     width: 33%;
   }
 }
 
 /*Auf kleinen Displays 2 Kategoriefilter nebeneinander darstellen */
-@media (max-width: 1400px)  {
+@media (min-width: 500px) and (max-width: 1399px)  {
   .category_filter {
     width: 50%;
   }
 }
 
+/*Auf sehr kleinen Displays 1 Kategoriefilter darstellen */
+@media (max-width: 499px)  {
+  .category_filter {
+    width: 100%;
+  }
+}
+
 
 .category_filter img {
-  height: 40px !important;
+  height: 30px !important;
   width: auto;
 }
 
@@ -402,10 +347,10 @@ body .dataTables_wrapper .dataTables_filter input {
 #wpgmza_filter_1 {
   text-align: left;
   margin-bottom: 0px;
-  font-size: 1.6rem !important;
+  font-size: 1.1rem !important;
   font-weight: bold;
   margin-bottom: 20px !important;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 #wpgmza_filter_1:after {
@@ -459,153 +404,6 @@ table.dataTable.no-footer {
 /*--------------------------------------------------------------- */
 
 
-
-
-
-/*--------------------------------------------------------------- */
-/***** Start: BILDER HOVER PROBLEMATIK ****/
-/*--------------------------------------------------------------- */
-/*
-  .block-box-img a:before, .block-box-img i.fa, .carousel-box-img a:before, .carousel-box-img i.fa, .fa-thumb-tack {display: none !important;content: none;}
-
-*/
-/*--------------------------------------------------------------- */
-/***** Ende: BILDER HOVER PROBLEMATIK ****/
-/*--------------------------------------------------------------- */
-
-
-
-
-/*--------------------------------------------------------------- */
-/***** Start: FORMULAR UPPERCASE BEHEBEN *****/
-/*--------------------------------------------------------------- */
-/*
-  input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea, select {text-transform: none;}
-*/
-/*--------------------------------------------------------------- */
-/***** Ende: FORMULAR UPPERCASE BEHEBEN *****/
-/*--------------------------------------------------------------- */
-
-
-/*--------------------------------------------------------------- */
-/***** Start: TRIBE EVENTS LINKS ******/
-/*--------------------------------------------------------------- */
-/*
-a.tribe-events-read-more {
-  font-weight: bold;
-  color: #81b22f;
-}
-a.tribe-events-read-more:hover {
-  color: #d3446f !important;
-}
-.tribe-events-list .vevent.hentry h2 {
-  padding-left: 0 !important;
-  font-size: 1.7em;
-}
-
-.vevent.type-tribe_events a:not(.url) {
-  font-weight: bold;
-  color: #81b22f;
-}
-.tribe-events-event-meta {margin-top: 20px !important; }
-
-/*--------------------------------------------------------------- */
-/***** Ende: TRIBE EVENTS LINKS ******/
-/*--------------------------------------------------------------- */
-
-
-
-
-
-
-/*--------------------------------------------------------------- */
-/***** Start: Displaygrößen-abhängige Anpassungen an der Filterbar ******/
-/* deaktiviert 1.4.2018 (filterbar wird seit langem nicht mehr verwendet) */
-/*--------------------------------------------------------------- */
-/*
-@media screen and (max-width: -width: 1200px) {
-        tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-date-filter,
-        .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-search-filter,
-        .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-submit{
-          width: inherit;
-        }
-}
-
-@media screen and (min-width: 1200px) {
-        .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-date-filter{
-          width: 25%;
-        }
-        .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-search-filter{
-          width: 45%;
-          margin-left: 1.25em;
-          margin-right: 1.25em;
-        }
-        .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-submit{
-          width: 30%;
-        }
-        #tribe-bar-form.tribe-bar-collapse #tribe-bar-views+.tribe-bar-filters{
-          display: block;
-        }
-}
-
-
-@media only screen and (min-width: 767px) {
-
-        #tribe_events_filters_form .tribe-events-filter-group.tribe-events-filter-checkboxes {
-            position: relative;
-            top: auto;
-            max-width: none;
-            border: none;
-            background: none;
-            box-shadow: none;
-        }
-
-        #tribe_events_filter_item_eventcategory .tribe-events-filter-group ul li label {
-           border-bottom: 0px;
-        }
-
-        #tribe_events_filters_form  .tribe-events-filter-group ul {
-            max-height: none;
-        }
-
-        #tribe_events_filters_form .tribe-events-filter-group ul li{
-            float: left;
-            border-left: 0px;
-            margin: 1px;
-        }
-
-        #tribe_events_filter_item_eventcategory ul li span {
-            width: 100%;
-            text-indent: 5px;
-        }
-
-        #tribe_events_filter_item_eventcategory .tribe-events-filter-group:before {
-        display: none;
-        border-bottom: #000;
-        }
-}
-*/
-/*--------------------------------------------------------------- */
-/***** Ende: Displaygrößen-abhängige Anpassungen an der Filterbar ******/
-/*--------------------------------------------------------------- */
-
-
-
-
-
-/*--------------------------------------------------------------- */
-/* Start TEC: filter bar */
-/* deaktiviert 1.4.2018 (filterbar wird seit langem nicht mehr verwendet) */
-/*--------------------------------------------------------------- */
-
-
-/* Schriftgröße und Ränder geändert (9.2.2019) */
-/*#top #wrap_all .tribe-events-button {
-    padding: 0px !important;
-    font-size: 9px !important;
-}
-*/
-
 /* Breite des Buttons geändert (von 25% auf 40%) */
 /* hgg, 9.2.2019 */
 .tribe-bar-submit {
@@ -642,9 +440,9 @@ display: inline-block;
     margin:30px 0px 30px 0px;
 }
 
-.tribe-events-button-beitrag {
-    padding: 10px;
-    color: #ffffff!important;
+a.tribe-events-button-beitrag, a.tribe-events-button-beitrag:focus, a.tribe-events-button-beitrag:visited{
+    padding: 3px;
+    color: #ffffff;
     font-size: 14px;
     background-color: #df5022;
     border-radius: 4px;
@@ -652,20 +450,9 @@ display: inline-block;
 }
 
 
-a.tribe-events-button-beitrag:focus{
-  color: #fff!important;
-  text-decoration: none;
-}
-
-a.tribe-events-button-beitrag:visited{
-  color: #fff!important;
-  text-decoration: none;
-}
-
-
 /* Hintergrund: grau */
 a.tribe-events-button-beitrag:hover{
-  color: #000 !important;
+  color: #000;
   background-color: #e3ddcd;
 }
 
@@ -676,13 +463,6 @@ a.tribe-events-button-beitrag:hover{
 /*----------------------------------------------------------------*/
 
 
-/* deaktiviert, 30.4.2017 (HGG) weil sonst die Überschrift in der Liste nicht farbig angezeigt wird */
-/*
-.tribe-event-url{
-background: #ffffff!important;
-border: 0px!important;
-}
-*/
 
 
 .tribe-bar-filters label{
@@ -834,77 +614,6 @@ select.ui-datepicker-month, select.ui-datepicker-year {
 
 
 
-/*--------------------------------------------------------------- */
-/****** Start Kalender Suche Tooltips ******/
-/*--------------------------------------------------------------- */
-.search-input-wrapper span {
-    display:none;
-    border: 1px solid #666;
-    position: absolute;
-    z-index: 1001;
-    bottom: 30px;
-    background-color: #f4eede;
-    color: #333;
-    line-height: 1.4;
-}
-.search-input-wrapper:hover span{
-  display: block;
- }
-/*CSS3 extras*/
-.search-input-wrapper span{
-    border-radius:4px;
-    box-shadow: 5px 5px 8px #CCC;
-}
-
-#tribe-bar-form.tribe-bar-collapse #tribe-bar-views+.tribe-bar-filters {
-overflow: visible;
-}
-
-.tribe-events-arrow {
-width: 18px;
-    height: 11px;
-    background-image: url(  ../../plugins/the-events-calendar/src/resources/images/tribe-tooltips.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    -webkit-background-size: 44px 19px;
-    background-size: 44px 19px;
-    display: block;
-    position: absolute;
-    bottom: -11px;
-}
-
-
-#event_taxonomy tr,#event_image_uploader tr,#event_datepickers tr, #event_website tr,#event_custom tr{
-  background: none;
-}
-/*--------------------------------------------------------------- */
-/****** Ende Kalender Suche Tooltips ******/
-/*--------------------------------------------------------------- */
-
-
-
-
-
-/* ------------------- */
-/* Start: button - Anzeige - nicht mehr benötigt (6.6.2016)   */
-/* ------------------- */
-
-/*
-.button-default {
-  display: inline-block;
-  margin: 5px 5px 5px 0;
-  border: none;
-  cursor: pointer;
-  text-shadow: none !important;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  font-size: 15px;
-  font-weight: bold;
-}
-/* ------------------- */
-/* Ende: button - Anzeige - nicht mehr benötigt (6.6.2016)   */
-/* ------------------- */
 
 
 
@@ -927,81 +636,6 @@ background: #Df5022
 /*--------------------------------------------------------------- */
 /* Ende: Freizeitangebote: Überschrift wie bei logger */
 /*--------------------------------------------------------------- */
-
-
-
-
-/*--------------------------------------------------------------- */
-/* Start: Mobile Ansicht schon bei 1200px aktivieren Styles */
-/* ausgeschaltet: 1.4.2018, hgg */
-/*--------------------------------------------------------------- */
-
-/*Navigation bei Displays mit maximal 1200px verstecken, da sie sonst nicht mehr in eine Zeile passt */
-/*
-@media only screen and (max-width: 1200px) {
-        .responsive.html_mobile_menu_tablet .main_menu .avia-menu, .responsive.html_mobile_menu_tablet #header_main .social_bookmarks, .responsive.html_mobile_menu_tablet #header_main_alternate {
-            display: none;
-        }
-        .container .av-content-small.units {
-          width: 100%;
-        }
-}
-*/
-/*Mobile Navigation fürs Displays mit maximal 1200px aktivieren */
-/*
-@media only screen and (max-width: 1200px){
-        .responsive.html_mobile_menu_tablet .container #advanced_menu_toggle, .responsive.html_mobile_menu_tablet #advanced_menu_hide {
-            display: block;
-        }
-}
-*/
-/*--------------------------------------------------------------- */
-/* Ende: Mobile Ansicht schon bei 1200px aktivieren Styles */
-/*--------------------------------------------------------------- */
-
-/*--------------------------------------------------------------- */
-/* Start: Tribe Widget Calendar Aachener Kinder Styles */
-/*--------------------------------------------------------------- */
-#tribe-mini-calendar-3 .tribe-mini-calendar-nav td, #tribe-mini-calendar-3 .tribe-mini-calendar-nav td span {
-  background: #df5022;
-  border-color: #df5022;
-}
-
-#tribe-mini-calendar-3 .tribe-events-past a{
-  background: #f4eede;
-}
-
-#tribe-mini-calendar-3 .tribe-events-future a{
-  background: #ffffff;
-  color:#919191;
-}
-
-#tribe-mini-calendar-month {
-  background: none;
-}
-#tribe-mini-calendar-3 .tribe-mini-calendar-nav-link span {
-  background: none;
-}
-
-#tribe-mini-calendar-3 td a:hover{
-  color: #ffffff;
-  background: #df5022;
-}
-#tribe-mini-calendar-3 td:hover{
-  background:#df5022;
-}
-
-#tribe-mini-calendar-3 td.tribe-events-present {
-  background-color: #df5022;
-}
-#tribe-mini-calendar-3 td.tribe-events-present a{
-  color: #ffffff;
-}
-/*--------------------------------------------------------------- */
-/* Ende: Tribe Widget Calendar Aachener Kinder Styles */
-/*--------------------------------------------------------------- */
-
-
 
 
 
@@ -1092,90 +726,6 @@ margin-top: inherit;
 
 
 
-/*--------------------------------------------------------------- */
-/* Start: Kalender Änderungen Jens   */
-/*--------------------------------------------------------------- */
-@media (min-width: 992px){
-  .tribe-events-loop {
-      padding-right: 50px;
-  }
-  }
-  #top #wrap_all .type-tribe_events{
-      padding-bottom: 5px;
-
-}
-
-#tribe-events-content.tribe-events-list .type-tribe_events h2{
-    padding-bottom: 0px;
-    padding-top: 6px;
-    font-weight: bold;
-}
-/*--------------------------------------------------------------- */
-/* Ende: Kalender Änderungen Jens   */
-/*--------------------------------------------------------------- */
-
-/*--------------------------------------------------------------- */
-/* Start: Community Event Formular Änderungen Jens   */
-/*--------------------------------------------------------------- */
-#tribe-community-events {
-    padding-right: 50px;
-}
-#top.tribe_community_edit .container .av-content-small.units {
-    width: 100%;
-}
-
-#top input#EventStartDate,#top input#EventEndTime{
-  width: 100px;
-  float: left;
-  border-radius: 2px;
-  margin-right: 5px;
-
-}
-
-#top input#EventStartTime, #top input#EventEndDate{
-    width: 100px;
-    border-radius: 2px;
-    float: left;
-}
-
-#top .tribe-datetime-separator {
-    display: block;
-    width: 59px;
-    float: left;
-    text-align: center;
-}
-
-#event_datepickers td{
-  border-left: 0px;
-}
-
-/* Datepicker Fix */
-/* ausgeschaltet am 5.6.2018
-#top .ui-datepicker-title select{
-  height: 30px;
-}
-*/
-
-
-#tribe-community-events table{
-background: #fff;
-}
-
-.tribe_community_edit .tribe-events-after-html{
-  display: none;
-}
-
-#event-meta tr:last-child td:first-child label:after{
-  content: "19.99 €";
-  white-space: pre;
-  font-size: 12px;
-}
-#timezone,.tribe-change-timezone{
-  display: none;
-}
-/*--------------------------------------------------------------- */
-/* Ende: Community Event Formular Änderungen Jens   */
-/*--------------------------------------------------------------- */
 
 
 /*--------------------------------------------------------------- */
@@ -1196,51 +746,6 @@ background: #fff;
 
 
 
-/*--------------------------------------------------------------- */
-/* Start: fix für TEC Community   */
-/* Kategorien nebeneinander
-/* Darstellung Premiumveranstaltungsauswahl
-/*--------------------------------------------------------------- */
-#event_image_uploader .tribe-image-upload-area input#EventImage {
-  margin-left: -115px;
-  cursor: pointer;
-}
-#event_custom.event-custom-fields input {
-    width: auto;
-}
-
-.event-taxonomy #event-categories li {
-    display: inline-block;
-}
-
-/* Listbox für Papierkorb muss schmaler sein, sonst läßt sich das nicht anklicken:
-#s2id_recurrence_rule_0_type,
-#s2id_recurrence_rule_1_type,
-#s2id_recurrence_rule_2_type,
-#s2id_recurrence_rule_3_type,
-#s2id_recurrence_rule_4_type,
-#s2id_recurrence_rule_5_type,
-#s2id_recurrence_rule_6_type,
-#s2id_recurrence_rule_7_type,
-#s2id_recurrence_rule_8_type,
-#s2id_recurrence_rule_9_type,
-#s2id_exclusion_rule_0_type,
-#s2id_exclusion_rule_1_type,
-#s2id_exclusion_rule_2_type,
-#s2id_exclusion_rule_3_type,
-#s2id_exclusion_rule_4_type,
-#s2id_exclusion_rule_5_type,
-#s2id_exclusion_rule_6_type,
-#s2id_exclusion_rule_7_type,
-#s2id_exclusion_rule_8_type,
-#s2id_exclusion_rule_9_type
-{
-  max-width: 90%;
-}
-
-/*--------------------------------------------------------------- */
-/* Ende: fix für TEC Community */
-/*--------------------------------------------------------------- */
 
 /*--------------------------------------------------------------- */
 /* Start: fix für Widget TEC 4.4  */
@@ -1313,19 +818,6 @@ src: url('fonts/open-sans.woff2') format('woff2');
 /*        fix für TEC community Version 4.5                                      */
 /*------------------------------------------------------------------------------ */
 
-/*------------------------------------------------------------------------------ */
-/* Start: Bilder in der Listenansicht mit Rand, 14.08.2017
-/*------------------------------------------------------------------------------ */
-
-/*	.tribe-events-list .tribe-events-event-image img {
-		padding: 10px!important;
-
-	}
-*/
-/*------------------------------------------------------------------------------ */
-/* Ende: Bilder in der Listenansicht mit Rand
-/*------------------------------------------------------------------------------ */
-
 
 /*------------------------------------------------------------------------------ */
 /* Start: Bilder in der Listenansicht mit Rand, 14.08.2017 + 20.10.2017
@@ -1362,57 +854,7 @@ h4 {
 /*------------------------------------------------------------------------------ */
 
 
-/*MOBILES MENU ICON FIX 22.07.17 */
-/*
-.avia-menu.av-main-nav-wrap {
-  display: block!important;
-}
 
-#av-burger-menu-ul .av-width-submenu:hover .sub-menu{
-  display:block!important;
-}
-
-.av-hamburger strong {
-    display: block!important;
-}
-*/
-
-
-/*--------------------------------------------------------------- */
-/* Start: Mobile Ansicht für Retina Tablets aktivieren */
-/* ausgeschaltet: 1.4.2018 */
-/*--------------------------------------------------------------- */
-/*
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (-webkit-min-device-pixel-ratio: 2) {
-*/
-/* eingeschaltet: 1.4.2018
-@media only screen and (max-width: 1240px) {
-        .container #advanced_menu_toggle, .container #advanced_menu_hide {
-          display: block;
-        }
-
-        .responsive .main_menu {
-          display: none;
-        }
-
-        .responsive #mobile-advanced {
-          display: block;
-        }
-
-}
-/* Balken nicht zeigen
-@media only screen and (max-device-width : 990px){
-    .avia-menu.av-main-nav-wrap {
-    display: block!important;
-  }
-}
-*/
-/*--------------------------------------------------------------- */
-/* Ende: Mobile Ansicht für Retina Tablets aktivieren */
-/*--------------------------------------------------------------- */
 
 
 /*------------------------------------------------------------------------------ */
@@ -1509,8 +951,8 @@ and (-webkit-min-device-pixel-ratio: 2) {
 /*------------------------------------------------------------------------------ */
 
 @media only screen
-and (min-device-width : 990px)
-and (max-device-width : 1100px)
+and (min-width : 990px)
+and (max-width : 1100px)
 {
 /* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
   .container {
@@ -1523,29 +965,6 @@ and (max-device-width : 1100px)
     width: 100% !important; border: none !important;
   }
 
-
-/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
-/*  .avia-menu-text {
-    font-size: 90% !important;
-}
-/*
-
-  #top #main .sidebar {
-    width: 100% !important;
-  }
-
-  nav.main_menu {
-    display: block !important;
-  }
-
-  #avia-menu .menu-item {
-    display: block;
-  }
-
-  .av-burger-menu-main.menu-item-avia-special {
-    display: inline-block;
-  }
-*/
 }
 
 /*------------------------------------------------------------------------------ */
@@ -1566,16 +985,6 @@ and (max-device-width : 1100px)
 /* Start: Normale Verlinkung durch Unterstreichen deutlicher hervorheben
 /* in <p>, 04.10.2017, hgg  - wieder rückgängig gemacht: 18.11.2017
 /*------------------------------------------------------------------------------ */
-/*p a {
-      text-decoration: underline!important;
-}
-
-
-#tribe-events-content a
-{
-      text-decoration: underline!important;
-}
-*/
 
 #top h1 a, #top h2 a, #top h3 a, #top h4 a, #top h5 a, #top h6 a .tribe-events-button {
     text-decoration: none!important;;
@@ -1670,60 +1079,7 @@ and (max-device-width : 1100px)
 /***** Ende: SHARE BUTTONS Custom Styles *****/
 /*--------------------------------------------------------------- */
 
-/*----------------------------------------------------------------*/
-/* Start: Darstellung der Bilder mit dem Schatten
-/* Datum: 19.11.2017
-/* deaktiviert: 14.3.2018 */
-/* Autor: hgg
-/*----------------------------------------------------------------*/
 
-
-/* Schatten und abgerundete Ecken: hgg, 18.11.2017 */
-/*
-.tribe-events-event-image img {
-    border-radius: 4px!important;
-    -webkit-box-shadow: 10px 10px 38px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 38px -10px rgba(0,0,0,0.75);
-    box-shadow: 15px 15px 38px -15px rgba(0,0,0,0.75);
-}
-*/
-
-/*----------------------------------------------------------------*/
-/* Start: Korrektur rechter Schatten
-/* Datum: 07.12.2017
-/* Autor: Andrei
-/*----------------------------------------------------------------*/
-
-/*
-.slide-entry-wrap{
-   padding-right: 35px !important;
-
-}
-*/
-
-/*----------------------------------------------------------------*/
-/* Start: Korrektur rechter Schatten
-/* Datum: 07.12.2017
-/* Autor: Andrei
-/*----------------------------------------------------------------*/
-
-
-/*----------------------------------------------------------------*/
-/* Start: Darstellung der Bilder mit dem Schatten
-/* Datum: 19.11.2017
-/* Autor: hgg
-/*----------------------------------------------------------------*/
-/*
-.avia-content-slider .slide-image, .avia-content-slider .slide-image img {
-    box-shadow: 15px 15px 38px -15px rgba(0,0,0,0.75);
-*/
-
-/*----------------------------------------------------------------*/
-/* Ende: Darstellung der Bilder mit dem Schatten
-/* Datum: 19.11.2017
-/* deaktiviert: 14.3.2018 */
-/* Autor: hgg
-/*----------------------------------------------------------------*/
 
 /*----------------------------------------------------------------*/
 /* Start: aktuelle Mitteilungen in Beiträgen
@@ -1743,3 +1099,224 @@ and (max-device-width : 1100px)
 /* Datum: 19.4.2018
 /* Autor: hgg
 /*----------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------*/
+/* Start: Anpassungen für TEC 5.0
+/* Datum: 27.2.2020
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+
+
+
+/* Text in sidebar linksbündig */
+#top #main .sidebar {
+    text-align: left;
+}
+
+
+/* Hauptmenüpunkte größer */
+span.avia-menu-text {
+    font-size: larger;
+}
+
+/* ------------------------------- */
+/* Farbkorrekturen                 */
+/* müssen noch optimiert werden    */
+/* ------------------------------- */
+
+.tribe-events .tribe-events-c-ical__link {
+    color: #Df5022;
+    border: 1px solid #Df5022;
+}
+
+.tribe-events .datepicker .day.active, .tribe-events .datepicker .day.active.focused, .tribe-events .datepicker .day.active:focus, .tribe-events .datepicker .day.active:hover, .tribe-events .datepicker .month.active, .tribe-events .datepicker .month.active.focused, .tribe-events .datepicker .month.active:focus, .tribe-events .datepicker .month.active:hover, .tribe-events .datepicker .year.active, .tribe-events .datepicker .year.active.focused, .tribe-events .datepicker .year.active:focus, .tribe-events .datepicker .year.active:hover {
+	background: #Df5022;
+}
+
+.tribe-events .tribe-events-c-events-bar__search-button:before {
+	background-color: #Df5022;
+}
+
+.tribe-events .tribe-events-c-ical__link:active, .tribe-events .tribe-events-c-ical__link:focus, .tribe-events .tribe-events-c-ical__link:hover {
+	background-color: #Df5022
+}
+
+.tribe-events .tribe-events-c-view-selector__button:before {
+	background-color: #Df5022;
+}
+
+.tribe-events .tribe-events-calendar-list__event-row--featured .tribe-events-calendar-list__event-date-tag-datetime:after {
+	background-color: #Df5022;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-calendar-list__event-datetime-featured-text {
+	color: #Df5022;
+}
+
+.tribe-events .tribe-events-calendar-month__calendar-event--featured:before {
+	background-color: #Df5022;
+}
+
+.tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date, .tribe-events .tribe-events-calendar-month__day--current .tribe-events-calendar-month__day-date-link {
+	color: #Df5022;
+}
+
+.tribe-events .tribe-events-calendar-month__day-cell--selected, .tribe-events .tribe-events-calendar-month__day-cell--selected:focus, .tribe-events .tribe-events-calendar-month__day-cell--selected:hover {
+	background-color: #Df5022
+}
+
+.tribe-events .tribe-events-calendar-month__mobile-events-icon--event {
+	background-color: #Df5022
+}
+
+.tribe-theme-enfold .tribe-events .datepicker .day.active, .tribe-theme-enfold .tribe-events .datepicker .day.active.focused, .tribe-theme-enfold .tribe-events .datepicker .day.active:focus, .tribe-theme-enfold .tribe-events .datepicker .day.active:hover, .tribe-theme-enfold .tribe-events .datepicker .month.active, .tribe-theme-enfold .tribe-events .datepicker .month.active.focused, .tribe-theme-enfold .tribe-events .datepicker .month.active:focus, .tribe-theme-enfold .tribe-events .datepicker .month.active:hover, .tribe-theme-enfold .tribe-events .datepicker .year.active, .tribe-theme-enfold .tribe-events .datepicker .year.active.focused, .tribe-theme-enfold .tribe-events .datepicker .year.active:focus, .tribe-theme-enfold .tribe-events .datepicker .year.active:hover {
+	background: #Df5022
+}
+
+
+/* ------------------------------- */
+/* Start Anpassungen Mini-Kalender */
+/* ------------------------------- */ 
+
+/* Titelzeile im Minikalender */
+.tribe-mini-calendar-nav td {
+    background: #Df5022!important;
+    border-color: #Df5022!important;
+}
+
+.tribe-mini-calendar-nav span{
+	background: #Df5022;
+}
+
+/* Tag mit Veranstaltungen */
+.tribe-mini-calendar .tribe-events-has-events {
+    background: #Df5022!important;
+    opacity:1.0;
+}
+
+/* Veranstaltungen in diesem Monat */
+td.tribe-events-thismonth.tribe-events-future.tribe-events-has-events.mobile-trigger {
+    opacity:0.7;
+}
+
+/* Veranstaltungen in folgenden Monaten */
+td.tribe-events-othermonth.tribe-events-future.tribe-events-has-events.mobile-trigger {
+    opacity:0.5;
+}
+
+/* Veranstaltungen in vergangenen Monaten */
+td.tribe-events-othermonth.tribe-events-past.tribe-events-has-events.mobile-trigger {
+    opacity: 0.2;
+}
+
+/* Schriftfarbe im Kalender */
+.tribe-mini-calendar .tribe-events-has-events div[id*=daynum-] a {
+    color: #000!important;
+}
+
+/* Tag ohne Veranstaltungen */
+.tribe-mini-calendar-no-event {
+    background: #fff!important;
+    color: #000!important;
+}
+
+/* ------------------------------- */
+/* Ende Anpassungen Mini-Kalender  */
+/* ------------------------------- */ 
+
+
+/* Veranstaltungen exportieren */
+a.tribe-events-c-ical__link, .tribe-events .tribe-events-c-ical__link {
+    background-color: #919191;
+    border: 1px solid #919191;
+    color: #fff;
+}
+
+/* Veranstaltungen exportieren (hover)*/
+a.tribe-events-c-ical__link:hover {
+    background-color: #919191!important;
+    border: 1px solid #919191;
+    opacity:0.5;
+    color: #fff;
+    text-decoration:none!important;
+}
+
+
+/* ------------------------------- */
+/* Ende Anpassungen Mini-Kalender  */
+/* ------------------------------- */
+
+
+
+/* ------------------------------- */
+/* Start Anpassungen TEC 5.x       */
+/* ------------------------------- */
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-breadcrumbs__list {
+    font-size: 18px;
+}
+
+.czr-wp-the-content ol>li:before, .woocommerce-Tabs-panel.entry-content ol>li:before, .woocommerce-product-details__short-description ol>li:before {
+    margin-left: .5em;
+}
+
+/* Button "Suche" anders gestalten */
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-search__button {
+    background-color: grey;
+    color:white;
+}
+
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-search__button:hover {
+    background-color: white;
+    color:grey;
+}
+
+/* unsortierte Liste ohne Punkte */
+.tribe-common--breakpoint-medium.tribe-events .tribe-events-c-view-selector--tabs .tribe-events-c-view-selector__list {
+    list-style-type: none;
+}
+
+.tribe-events .tribe-events-c-top-bar__nav-list {
+    list-style-type: none;
+}
+
+/* ------------------------------- */
+/* Ende Anpassungen TEC 5.x        */
+/* ------------------------------- */
+
+/*----------------------------------------------------------------*/
+/* Ende: Anpassungen für TEC 5.0
+/* Datum: 27.2.2020
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+
+/* Container für Mitgliedsbutton und Infotext - hgg, 6.10.2019 */
+@media (min-width: 431px) {
+  .ackids_container {
+    display: inline-flex;
+    border: 1px solid #eee;
+    padding: 10px;
+    vertical-align: middle !important;
+  }
+}
+
+@media (max-width: 430px) {
+.ackids_container {
+  display: block;
+  border: 1px solid #eee;
+  padding: 10px;
+  vertical-align: middle !important;
+  }
+}
+.ackids_container > div {
+  text-align: left;
+}
+
+/* Meldung abgesagte Veranstaltungen, hgg, 20.3.2020 */
+div.abgesagt {
+    color: #ffffff;
+    font-size: 1.0em;
+    background-color: #df5022;
+    padding: 10px;
+}
